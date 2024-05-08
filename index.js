@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import Connection from './database/db.js';
 import bookRoute from './routes/book.js';
+import orderRoute from './routes/orders.js';
 import errorHandler from './middleware/errorHandler.js';
 
 
@@ -27,5 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.use('/books', bookRoute);
+app.use('/order', orderRoute);
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
